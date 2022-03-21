@@ -25,3 +25,10 @@ gan_engine.trt
 2 make
 
 3 cd build && ./main
+
+----
+
+在simulator部署的时候，只需要关注simulator/libSim/all_observer.cpp这个文件，其中trt模型的运行推理部分已经在simulator中实现了，具体可视化步骤如下：
+
+- 利用此代码的前半部分将onnx序列化为trt引擎并修改all_observer.cpp的trt路径
+- 修改all_observer.cpp中模型的输入和输出部分即可
